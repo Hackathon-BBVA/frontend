@@ -1,0 +1,18 @@
+{
+  "name": "callcenter",
+  "version": "1.0.0",
+  "description": "front del proyecto hackathon 2020",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production"
+  },
+  "author": "CarlosERamirez",
+  "license": "ISC",
+  "dependencies": {
+    "lit-element": "^2.4.0"
+  },
+  "devDependencies": {
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  }
+}
