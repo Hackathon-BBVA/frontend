@@ -7,7 +7,7 @@ var path = require('path'); // dónde se usa path en este server?
 var cors = require('cors')
 app.use(cors())
 
-app.use(express.static(__dirname + '/dist'));
+app.use(express.static(__dirname)); //CERS:  + '/dist'
 
 app.listen(port);
 
