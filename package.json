@@ -1,18 +1,21 @@
 {
-  "name": "callcenter",
-  "version": "1.0.0",
-  "description": "front del proyecto hackathon 2020",
-  "main": "index.js",
-  "scripts": {
-    "build": "webpack --mode production"
-  },
-  "author": "CarlosERamirez",
-  "license": "ISC",
-  "dependencies": {
-    "lit-element": "^2.4.0"
-  },
-  "devDependencies": {
-    "webpack": "^4.44.2",
-    "webpack-cli": "^3.3.12"
-  }
+    "name": "callcenter",
+    "version": "1.0.0",
+    "description": "front del proyecto hackathon 2020",
+    "main": "index.js",
+    "scripts": {
+        "start": "node server.js",
+        "build": "webpack --mode production"
+    },
+    "author": "CarlosERamirez",
+    "license": "ISC",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "lit-element": "^2.4.0"
+    },
+    "devDependencies": {
+        "webpack": "^4.44.2",
+        "webpack-cli": "^3.3.12"
+    }
 }
