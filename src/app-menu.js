@@ -32,7 +32,6 @@ class AppMenu extends LitElement {
     }
 
     showCurrentView() {
-        //console.log(this.shadowRoot.getElementById('menu'))
         switch(this.currentOption) {
             case '#home'   : return html`<app-home></app-home>`;
             case '#status' : return html`<app-status></app-status>`;
@@ -66,8 +65,6 @@ class AppMenu extends LitElement {
     }
 
     actionMenu(){
-        console.log(this.currentOption) //cers
-
         const menu = this.shadowRoot.querySelector(".menu");
         const btnAction = this.shadowRoot.querySelector(".btnAction");
         const action = btnAction.getAttribute("action");

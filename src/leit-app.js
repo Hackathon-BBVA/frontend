@@ -20,7 +20,6 @@ class LeitApp extends LitElement {
     }
 
     showCurrentView() {
-        //console.log(this.shadowRoot.getElementById('menu'))
         switch(this.currentOption) {
             case '#home'   : return html`<app-home></app-home>`;
             case '#status' : return html`<app-status></app-status>`;
