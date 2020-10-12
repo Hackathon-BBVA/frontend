@@ -2,14 +2,16 @@
 FROM node:latest
 
 # Carpeta raiz del contenedor
-WORKDIR /callcenter
-
+#RUN mkdir -p /app
+WORKDIR /app
 # Copiado de archivos
 #ADD . /app
-ADD dist /callcenter/dist
-ADD server.js /callcenter
-ADD package.json /callcenter
-ADD package-lock.json /callcenter
+ADD dist /app/dist
+ADD images /app/images
+ADD server.js /app
+ADD package.json /app
+ADD package-lock.json /app
+ADD index.html /app
 
 # Dependencias
 RUN npm install
