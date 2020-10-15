@@ -39,8 +39,8 @@ class AppHome extends LitElement {
         return html `
         <script src=></script>
         
-        <iframe title="Dasboards" src="https://us-east-1.quicksight.aws.amazon.com/sn/dashboards/953ae31e-2158-4d08-9b83-9bf7b094a307"></iframe>
-        <!--<a href="https://us-east-1.quicksight.aws.amazon.com/sn/dashboards/953ae31e-2158-4d08-9b83-9bf7b094a307"><h1>Home Dashboard</h1></a>-->
+        <!--<iframe title="Dasboards" src="https://us-east-1.quicksight.aws.amazon.com/sn/dashboards/953ae31e-2158-4d08-9b83-9bf7b094a307"></iframe>-->
+        <a href="https://us-east-1.quicksight.aws.amazon.com/sn/dashboards/953ae31e-2158-4d08-9b83-9bf7b094a307"><h1>Home Dashboard</h1></a>
         <div id="embeddingContainer"></div> 
         `;
     }
