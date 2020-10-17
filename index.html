@@ -1,61 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Basic Embed</title>
-    <script src="embed.js"></script>
-    <script src="aws_config.js"></script>
-    <script src="https://unpkg.com/amazon-quicksight-embedding-sdk@1.0.11/dist/quicksight-embedding-js-sdk.min.js"></script>
-
-    <script type="text/javascript">
-        var dashboard
-
-        function onDashboardLoad(payload) {
-            console.log("Do something when the dashboard is fully loaded.");
-        }
-
-        function onError(payload) {
-            console.log("Do something when the dashboard fails loading");
-        }
-
-        function embedDashboard() {
-            var containerDiv = document.getElementById("embeddingContainer");
-            var options = {
-                url: 'https://us-east-1.quicksight.aws.amazon.com/sn/dashboards/953ae31e-2158-4d08-9b83-9bf7b094a307',
-                container: containerDiv,
-                parameters: {
-                    country: "United States"
-                },
-                scrolling: "no",
-                height: "700px",
-                width: "1000px",
-                locale: "en-US",
-                footerPaddingEnabled: true
-            };
-            dashboard = QuickSightEmbedding.embedDashboard(options);
-            dashboard.on("error", onError);
-            dashboard.on("load", onDashboardLoad);
-        }
-
-        function onCountryChange(obj) {
-            dashboard.setParameters({
-                country: obj.value
-            });
-        }
-    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SmartSpeech</title>
+    <!--se usaba con polymer:-->
+    <!--<script src="./src/index.js" type="module"></script>-->
+    <!--polymer también lee éste de webpack:-->
+    <script src='./dist/main.js'></script>
 </head>
 
-<body onload="embedDashboard()">
-    <a href="https://us-east-1.quicksight.aws.amazon.com/sn/dashboards/953ae31e-2158-4d08-9b83-9bf7b094a307">CLICK</a>
-    <span>
-            <label for="country">Country</label>
-            <select id="country" name="country" onchange="onCountryChange(this)">
-                <option value="United States">United States</option>
-                <option value="Mexico">Mexico</option>
-                <option value="Canada">Canada</option>
-            </select>
-        </span>
-    <div id="embeddingContainer"></div>
+<body>
+    <button id='button' style="display: true" onclick="iniciar()">Inicia sesión</button>
+
+    <leit-landing id='landing' style="display: true" background="#18b3ff"></leit-landing>
+
+    <!-- <leit-app background="#18b3ff"></leit-app> -->
+    <app-menu id="menu" background="#18b3ff" style="display: none" options="Home,Server(DB) Status,Batch,-Discover,-Configuration,-Log Out" optionsHREF="#home,#status,#batch,#discover,#config,#logout">
+    </app-menu>
+
 </body>
+<script>
+    function iniciar() {
+        document.getElementById('menu').setAttribute('style', 'display: true')
+        document.getElementById('landing').setAttribute('style', 'display: none')
+        document.getElementById('button').setAttribute('style', 'display: none')
+    }
+</script>
 
 </html>
