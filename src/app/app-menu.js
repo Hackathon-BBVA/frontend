@@ -1,4 +1,4 @@
-import {LitElement, html, css} from 'lit-element';
+import { LitElement, html, css } from 'lit-element';
 
 //CERS
 import './app-home';
@@ -8,13 +8,13 @@ import './app-batch';
 class AppMenu extends LitElement {
     static get properties() {
         return {
-            options: {type: String},
-            optionsArray: {type: Array},
-            optionsHREF : {type: String},
-            optionsHREFArray : {type: String},
-            background: {type: String},
-            stateLoad: {type: Boolean},
-            currentOption: {type: String}
+            options: { type: String },
+            optionsArray: { type: Array },
+            optionsHREF: { type: String },
+            optionsHREFArray: { type: String },
+            background: { type: String },
+            stateLoad: { type: Boolean },
+            currentOption: { type: String }
         }
     }
 
@@ -22,7 +22,7 @@ class AppMenu extends LitElement {
         super();
         this.stateLoad = false;
         this.currentOption = '#home'
-        //this.background = "#18b3ff";
+            //this.background = "#18b3ff";
     }
 
     firstUpdated() {
@@ -32,15 +32,19 @@ class AppMenu extends LitElement {
     }
 
     showCurrentView() {
-        switch(this.currentOption) {
-            case '#home'   : return html`<app-home></app-home>`;
-            case '#status' : return html`<app-status></app-status>`;
-            case '#batch'  : return html`<app-batch></app-batch>`;
+        switch (this.currentOption) {
+            case '#home':
+                return html `<app-home></app-home>`;
+            case '#status':
+                return html `<app-status></app-status>`;
+            case '#batch':
+                return html `<app-batch></app-batch>`;
         }
     }
 
     render() {
-        return html`
+            return html `
+        <link rel="stylesheet" href="../css/app-menu.css">
             <nav class="menu" style="background-color: ${this.background}">
                 <button class="btnAction" @click="${this.actionMenu}" action="open" style="background-color: ${this.background}">
                     <span></span>

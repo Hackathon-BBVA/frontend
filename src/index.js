@@ -1,3 +1,3 @@
 import './leit-landing';
 import './leit-app';
-import './app-menu';
+import './app/app-menu';

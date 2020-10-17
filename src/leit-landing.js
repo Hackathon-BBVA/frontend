@@ -1,12 +1,15 @@
-import {LitElement, html, css} from 'lit-element';
+import { LitElement, html, css } from 'lit-element';
 
-import './land-menu';
-import './land-page';
+import './landing/section-login'
+import './landing/section-features'
+import './landing/section-video'
+import './landing/section-equipo'
+import './landing/section-info'
 
 class LeitLanding extends LitElement {
     static get properties() {
         return {
-            background: { type: String}
+            background: { type: String }
         }
     }
 
@@ -18,15 +21,34 @@ class LeitLanding extends LitElement {
 
 
     render() {
-        return html`
-        <div style="background-color: ${this.background}"}'>
-            <land-menu 
-                options="Nosotros,Video,Try me" 
-                optionsHREF="#nosotros,#video,#tryme"
-                background="#18b3ff">
-            </land-menu>
+        return html `
+        <!--<div style="background-color: ${this.background}"}'>-->
+        <link rel="stylesheet" href="../css/style.css">
+        <div id="container">
+            
+        <!--nav-->
+        <nav>
+            <img src="images/img_logo.png" alt="BBVA smartspeech" id="headerlogo" />
+        
+            <ul>
+                <li><a id="inicio" class="elemento" href="#">Sobre el proyecto</a></li>
+                <li><a id="socios" class="elemento" href="#">Equipo Leitmotiv</a></li>
+                <li><a id="galeria" class="elemento" href="#">Soporte</a></li>
+            </ul>
+        </nav>
 
-            <land-page></land-page>
+        <!--login-->
+        <section-login></section-login>
+        <!--features-->
+        <section-features></section-features>
+        <!--video-->
+        <section-video></section-video>
+        <!--equipo-->
+        <section-equipo></section-equipo>
+        <!--info-->
+        <section-info></section-info>
+            
+        </div>
         </div> 
         `;
     }

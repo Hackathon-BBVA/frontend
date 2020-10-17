@@ -1,15 +1,15 @@
-import {LitElement, html, css} from 'lit-element';
+import { LitElement, html, css } from 'lit-element';
 
-import './app-menu';
-import './app-home';
-import './app-status';
-import './app-batch';
+import './app/app-menu';
+import './app/app-home';
+import './app/app-status';
+import './app/app-batch';
 
 class LeitApp extends LitElement {
     static get properties() {
         return {
             currentView: { type: String },
-            background: { type: String}
+            background: { type: String }
         }
     }
 
@@ -20,15 +20,18 @@ class LeitApp extends LitElement {
     }
 
     showCurrentView() {
-        switch(this.currentOption) {
-            case '#home'   : return html`<app-home></app-home>`;
-            case '#status' : return html`<app-status></app-status>`;
-            case '#batch'  : return html`<app-batch></app-batch>`;
+        switch (this.currentOption) {
+            case '#home':
+                return html `<app-home></app-home>`;
+            case '#status':
+                return html `<app-status></app-status>`;
+            case '#batch':
+                return html `<app-batch></app-batch>`;
         }
     }
 
     render() {
-        return html`
+        return html `
         <div style="background-color: ${this.background}"}'>
             <app-menu id='menu'
                 options="Home,Server(DB) Status,Batch,-Discover,-Configuration,-Log Out" 
